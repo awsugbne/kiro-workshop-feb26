@@ -1,0 +1,23 @@
+---
+title: Checkpointing & Restore
+description: Use Kiro's checkpointing feature to save and restore your codebase state.
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+Sometimes you'll encounter issues during development. Kiro provides a **Checkpointing** feature to help you recover.
+
+![Kiro chat showing an issue with options to fix or restore using checkpointing](../../../assets/screenshots/46.png)
+
+## How checkpointing works
+
+As Kiro modifies your codebase, it automatically creates **checkpoint markers**. These checkpoints help Kiro understand and rewind changes when something goes wrong.
+
+You have two options when encountering issues:
+
+1. **Work with Kiro to fix it** — Describe the problem in chat and let Kiro debug and resolve the issue.
+2. **Restore to a checkpoint** — Click **Restore** to rewind to a previous known-good state.
+
+<Aside type="tip">
+Checkpointing is especially useful when a task produces unexpected results. Instead of manually undoing changes, you can restore to the state before the problematic task and try a different approach.
+</Aside>

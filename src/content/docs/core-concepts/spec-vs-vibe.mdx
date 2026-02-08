@@ -1,0 +1,43 @@
+---
+title: Spec vs Vibe Coding
+description: Understand Kiro's two coding modes and when to use each one.
+---
+
+import { Tabs, TabItem, Aside } from '@astrojs/starlight/components';
+
+Kiro offers two distinct modes for building applications. Understanding when to use each is key to getting the most out of the IDE.
+
+![Kiro showing Spec and Vibe coding mode options](../../../assets/screenshots/07.png)
+
+<Tabs>
+  <TabItem label="Spec (Recommended)">
+    **Spec-driven development** is Kiro's recommended approach. When you provide a prompt in Spec mode, Kiro creates three structured documents:
+
+    1. **Requirements** — User stories and acceptance criteria in EARS notation
+    2. **Design** — Technical architecture, sequence diagrams, and implementation considerations
+    3. **Implementation Plan** — A detailed task list with discrete, trackable tasks
+
+    Use Spec mode when you want a structured, reviewable development process.
+  </TabItem>
+  <TabItem label="Vibe">
+    **Vibe coding** is a more freeform mode. It's great for:
+
+    - Rapid exploration and testing
+    - Refining prompts before using Spec mode
+    - Quick prototyping
+    - Building when requirements are unclear
+
+    As we'll see later, you can combine both — use Vibe to refine your prompt, then pass the result to Spec mode.
+  </TabItem>
+</Tabs>
+
+## Model selection and Autopilot
+
+![Model selection and Autopilot mode options in Kiro](../../../assets/screenshots/08.png)
+
+- **Model selection** — You can choose from available models, though **Auto** is recommended. Kiro will optimise which model to use. Model selection influences both results and credit usage.
+- **Autopilot mode** — An autonomous execution feature where Kiro can make multiple code changes, run commands, and make architectural decisions across a codebase to complete complex tasks with minimal human intervention.
+
+<Aside type="tip">
+Using the **Auto** model setting lets Kiro pick the best model for each task, balancing quality and credit usage.
+</Aside>

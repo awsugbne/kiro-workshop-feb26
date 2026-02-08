@@ -1,0 +1,55 @@
+---
+title: Kiro IDE Workshop
+description: A hands-on workshop guide for building with Kiro IDE using spec-driven development.
+template: splash
+hero:
+  tagline: Brisbane AWS User Group Meetup — Build a todo app with spec-driven development in Kiro IDE
+  image:
+    file: ../../assets/logo.png
+    alt: Brisbane AWS User Group
+  actions:
+    - text: Start Workshop
+      link: /kiro-workshop-feb26/getting-started/welcome-and-signin/
+      icon: right-arrow
+      variant: primary
+    - text: What is Kiro?
+      link: https://kiro.dev
+      icon: external
+      variant: minimal
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+## Acknowledgements
+
+<Card title="Original Demo by Donnie Prakoso" icon="star">
+	This workshop is based on the [original interactive demo](https://donnie.id/interactive-demo/kiro-ide/) created by [Donnie Prakoso](https://donnie.id), Developer Advocate at AWS. The original workshop was provided through the **AWS User Group Leaders Program** — we copied and modified it for use at our meetup. All credit to Donnie for the source material.
+</Card>
+
+## What you'll learn
+
+<CardGrid stagger>
+	<Card title="Spec-Driven Development" icon="document">
+		Learn Kiro's structured approach: generate requirements, design documents, and implementation plans from a single prompt.
+	</Card>
+	<Card title="Vibe Coding" icon="rocket">
+		Use Kiro's Vibe mode for rapid exploration and prompt refinement before switching to Spec mode for structured builds.
+	</Card>
+	<Card title="Steering Docs" icon="setting">
+		Guide Kiro with persistent knowledge — coding standards, accessibility rules, and project conventions.
+	</Card>
+	<Card title="Agent Hooks & MCP" icon="puzzle">
+		Automate workflows with event-driven hooks and extend Kiro's capabilities with MCP servers.
+	</Card>
+</CardGrid>
+
+## Workshop overview
+
+This workshop walks you through building a **todo list application** (Python Flask backend + Vue.js frontend) entirely within Kiro IDE. You'll experience the full spec-driven development workflow:
+
+1. **Set up Kiro** — Sign in, explore the workspace, understand credits
+2. **Learn the modes** — Spec vs Vibe coding, context, and model selection
+3. **Generate specs** — Refine your prompt, generate requirements, design, and tasks
+4. **Configure your workspace** — Steering docs, agent hooks, MCP servers
+5. **Execute the build** — Run tasks, handle confirmations, verify completion
+6. **Test & iterate** — Run the app, use checkpointing, iterate with updated specs
