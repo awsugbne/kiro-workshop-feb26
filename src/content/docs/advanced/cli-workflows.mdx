@@ -1,0 +1,121 @@
+---
+title: Kiro CLI Workflows
+description: Use Kiro from the command line for autonomous agents, CI/CD integration, and advanced workflows.
+---
+
+import { Tabs, TabItem, Aside, Steps } from '@astrojs/starlight/components';
+
+While this workshop focuses on Kiro IDE, **Kiro CLI** offers powerful capabilities for developers who prefer terminal-based workflows or need to integrate Kiro into automated pipelines.
+
+## Why Use the CLI?
+
+<Tabs>
+  <TabItem label="Autonomous Agents">
+    The CLI excels at running **autonomous agent sessions** — long-running tasks where Kiro works independently with minimal intervention:
+
+    - Complex refactoring across multiple files
+    - Codebase-wide migrations
+    - Extended debugging sessions
+    - Multi-step feature implementation
+  </TabItem>
+  <TabItem label="CI/CD Integration">
+    Integrate Kiro into your development pipelines:
+
+    - Automated code review on pull requests
+    - Pre-commit spec validation
+    - Documentation generation
+    - Test generation for new features
+  </TabItem>
+  <TabItem label="Scripting">
+    Script Kiro for repeatable tasks:
+
+    - Batch processing of code changes
+    - Standardised project setup
+    - Automated documentation updates
+  </TabItem>
+</Tabs>
+
+## Getting Started with CLI
+
+<Steps>
+
+1. **Install Kiro CLI**
+
+   Download from [kiro.dev](https://kiro.dev) — the CLI is included with the IDE installation, or can be installed separately.
+
+2. **Authenticate**
+
+   ```bash
+   kiro auth login
+   ```
+
+   This opens a browser for AWS Builder ID authentication.
+
+3. **Start a chat session**
+
+   ```bash
+   kiro chat
+   ```
+
+   Opens an interactive chat session in your terminal.
+
+4. **Run autonomous tasks**
+
+   ```bash
+   kiro agent "Refactor the authentication module to use JWT tokens"
+   ```
+
+   Starts an autonomous agent that works through the task independently.
+
+</Steps>
+
+## Model Selection in CLI
+
+Just like the IDE, you can select models in the CLI:
+
+```bash
+# Use a specific model
+kiro chat --model claude-opus-4
+
+# Use open weight models for cost efficiency
+kiro chat --model qwen3-coder-next
+```
+
+<Aside type="tip">
+For long agentic sessions, consider **Qwen3 Coder Next** (0.05x credits) which supports 256K context — ideal for working across large codebases.
+</Aside>
+
+## Code Intelligence
+
+The CLI includes powerful code analysis features:
+
+```bash
+# Analyse codebase structure
+kiro analyze
+
+# Generate documentation
+kiro docs generate
+
+# Find related code
+kiro search "authentication flow"
+```
+
+Learn more in the [Code Intelligence documentation](https://kiro.dev/docs/cli/code-intelligence/).
+
+## Combining IDE and CLI
+
+A powerful workflow combines both tools:
+
+1. **Plan in IDE** — Use Spec mode to generate requirements and design
+2. **Execute via CLI** — Run autonomous agents for implementation
+3. **Review in IDE** — Use inline chat and checkpointing for refinement
+
+<Aside type="note">
+The CLI uses the same authentication and credits as the IDE. Your steering docs, hooks, and MCP configurations apply to both.
+</Aside>
+
+## Further Reading
+
+- [Kiro CLI Documentation](https://kiro.dev/docs/cli/)
+- [Autonomous Agent Guide](https://kiro.dev/docs/autonomous-agent/)
+- [Model Selection](https://kiro.dev/docs/cli/chat/model-selection/)

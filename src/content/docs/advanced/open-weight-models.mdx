@@ -1,0 +1,103 @@
+---
+title: Open Weight Models
+description: Understand Kiro's open weight model options and when to use them for cost-effective development.
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+Kiro supports **open weight models** alongside Claude, giving you flexibility to match model capabilities to your tasks while managing credit costs.
+
+## Available Models
+
+### DeepSeek v3.2
+
+| | |
+|---|---|
+| **Credit Multiplier** | 0.25x |
+| **Architecture** | Sparse Mixture-of-Experts |
+| **Strengths** | Multi-step tool calling, maintaining state across long sessions |
+
+**Best for:**
+- Building agents and complex debugging
+- Agentic workflows requiring persistent state
+- Multi-file refactoring sessions
+
+### MiniMax 2.1
+
+| | |
+|---|---|
+| **Credit Multiplier** | 0.15x |
+| **Specialisation** | Multilingual programming |
+| **Languages** | Rust, Java, Go, C++, Kotlin, TypeScript, JavaScript |
+
+**Best for:**
+- Teams working across multiple programming languages
+- Frontend development (web, Android, iOS)
+- UI code generation
+
+### Qwen3 Coder Next
+
+| | |
+|---|---|
+| **Credit Multiplier** | 0.05x |
+| **Architecture** | 80B sparse MoE (3B active parameters) |
+| **Context** | 256K tokens |
+| **Performance** | 70%+ on SWE-Bench Verified |
+
+**Best for:**
+- Long agentic CLI sessions
+- Budget-conscious development
+- Quick iterations and boilerplate generation
+
+## Choosing the Right Model
+
+| Task | Recommended Model | Why |
+|------|------------------|-----|
+| Quick code fixes | Qwen3 Coder Next | Lowest cost, fast responses |
+| Complex debugging | DeepSeek v3.2 | Maintains context across long sessions |
+| UI generation | MiniMax 2.1 | Strong at frontend code patterns |
+| Multi-language projects | MiniMax 2.1 | Excellent across many languages |
+| Spec-driven development | Claude (Auto) | Best for structured planning |
+| Code review | Claude Opus | Highest reasoning quality |
+
+<Aside type="tip">
+Use **Auto** mode to let Kiro intelligently select models based on the task. For specific needs, manually select from the model dropdown.
+</Aside>
+
+## Credit Efficiency Strategies
+
+1. **Use Qwen3 for routine work** — Boilerplate, simple refactors, documentation
+2. **Reserve Claude for planning** — Requirements, design, complex architecture
+3. **Use DeepSeek for debugging** — When you need persistent context
+4. **Use MiniMax for frontend** — UI components, styling, responsive layouts
+
+## How to Select Models
+
+### In the IDE
+
+Click the model selector in the chat panel and choose from the dropdown list.
+
+### In the CLI
+
+```bash
+# Specify model explicitly
+kiro chat --model deepseek-v3
+
+# Or use in agent mode
+kiro agent --model qwen3-coder-next "Generate unit tests for auth module"
+```
+
+## Technical Details
+
+- **Inference Region**: AWS US East (N. Virginia)
+- **Availability**: Free and paid users with Google, GitHub, or AWS Builder ID
+- **Support Status**: Experimental (stability may vary)
+
+<Aside type="caution">
+Open weight models are marked as experimental. While they perform well for many tasks, Claude remains the recommended choice for critical work requiring highest reliability.
+</Aside>
+
+## Further Reading
+
+- [Open Weight Models Announcement](https://kiro.dev/blog/open-weight-models/)
+- [Model Selection Guide](https://kiro.dev/docs/chat/model-selection/)

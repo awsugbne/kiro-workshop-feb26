@@ -3,17 +3,80 @@ title: MCP Servers
 description: Extend Kiro's capabilities by connecting to MCP (Model Context Protocol) servers.
 ---
 
-import { Steps, Aside } from '@astrojs/starlight/components';
+import { Steps, Aside, Tabs, TabItem } from '@astrojs/starlight/components';
 
 **Model Context Protocol (MCP)** is an open protocol that standardises how applications provide context to LLMs. With MCP, Kiro can connect to various data sources and tools through MCP servers, extending its capabilities beyond built-in features. This allows Kiro to interact with databases, APIs, file systems, and other services in a standardised way.
 
-## AWS MCP servers
+## AWS MCP Servers
 
-If you're building on AWS, you can find a curated list of MCP servers on the [AWS MCP Servers](https://awslabs.github.io/mcp/) website.
+AWS provides **50+ MCP servers** for interacting with AWS services. Find the full catalog at [awslabs.github.io/mcp](https://awslabs.github.io/mcp/).
 
 ![AWS MCP Servers website showing available MCP server options](../../../assets/screenshots/33.png)
 
-## Configuring MCP servers in Kiro
+### Recommended Servers by Use Case
+
+<Tabs>
+  <TabItem label="Documentation">
+    Essential for any AWS development:
+
+    | Server | Purpose |
+    |--------|---------|
+    | **AWS Documentation** | Get latest AWS docs and API references |
+    | **AWS Knowledge** | Documentation, code samples, official content |
+  </TabItem>
+  <TabItem label="Infrastructure">
+    For deploying and managing AWS resources:
+
+    | Server | Purpose |
+    |--------|---------|
+    | **AWS CDK** | CDK development with security compliance |
+    | **CloudFormation** | Direct CloudFormation resource management |
+    | **Terraform** | Terraform workflows with security scanning |
+    | **Cloud Control API** | Full CRUDL operations with security scanning |
+    | **EKS** | Kubernetes cluster management |
+    | **ECS** | Container orchestration and deployment |
+    | **Serverless (SAM)** | Serverless app lifecycle with SAM CLI |
+  </TabItem>
+  <TabItem label="Databases">
+    For data storage and queries:
+
+    | Server | Purpose |
+    |--------|---------|
+    | **DynamoDB** | Complete DynamoDB operations |
+    | **Aurora PostgreSQL** | PostgreSQL via RDS Data API |
+    | **Aurora MySQL** | MySQL via RDS Data API |
+    | **DocumentDB** | MongoDB-compatible operations |
+    | **Neptune** | Graph database queries |
+    | **Redshift** | Data warehouse queries |
+  </TabItem>
+  <TabItem label="AI/ML">
+    For AI and machine learning:
+
+    | Server | Purpose |
+    |--------|---------|
+    | **Bedrock Knowledge Bases** | Query knowledge bases with citations |
+    | **Nova Canvas** | AI image generation |
+    | **SageMaker** | Model development and deployment |
+    | **Bedrock Data Automation** | Analyse documents, images, video, audio |
+  </TabItem>
+  <TabItem label="DevOps">
+    For monitoring and operations:
+
+    | Server | Purpose |
+    |--------|---------|
+    | **CloudWatch** | Metrics, alarms, and logs analysis |
+    | **CloudTrail** | API activity and audit logs |
+    | **Cost Explorer** | Detailed cost analysis |
+    | **Pricing** | Pre-deployment cost estimation |
+    | **AWS Diagram** | Generate architecture diagrams |
+  </TabItem>
+</Tabs>
+
+<Aside type="tip" title="Highlight: AWS Diagram Server">
+The **AWS Diagram MCP Server** can automatically generate architecture diagrams from your infrastructure code or descriptions. Great for documentation and presentations!
+</Aside>
+
+## Configuring MCP Servers in Kiro
 
 <Steps>
 
@@ -23,10 +86,60 @@ If you're building on AWS, you can find a curated list of MCP servers on the [AW
 
    ![MCP server configuration in Kiro](../../../assets/screenshots/34.png)
 
+2. **Example configuration**
+
+   Here's an example MCP server configuration for AWS Documentation:
+
+   ```json
+   {
+     "mcpServers": {
+       "aws-docs": {
+         "command": "uvx",
+         "args": ["awslabs.aws-documentation-mcp-server@latest"],
+         "env": {
+           "AWS_PROFILE": "default"
+         }
+       }
+     }
+   }
+   ```
+
+3. **Restart Kiro**
+
+   After adding configuration, restart Kiro to load the new MCP servers.
+
 </Steps>
 
-<Aside type="tip">
-MCP servers extend what Kiro can do — from querying databases to interacting with cloud services. Combined with steering docs and agent hooks, they form a powerful toolkit for your development workflow.
+## MCP vs Powers
+
+For common use cases, consider using [Kiro Powers](/kiro-workshop-feb26/configuring/powers/) instead:
+
+| Feature | MCP Servers | Powers |
+|---------|-------------|--------|
+| Setup | Manual JSON config | One-click install |
+| Includes | Tools only | Tools + Steering + Hooks |
+| Flexibility | Full control | Pre-configured |
+| Best for | Custom setups | Common workflows |
+
+<Aside type="note">
+Powers are built on MCP servers. If a Power exists for your use case, it's usually easier to install the Power. Use direct MCP configuration when you need custom setups or servers not available as Powers.
 </Aside>
 
-With **Steering Docs**, **Agent Hooks**, and **MCP Servers** configured, Kiro is now equipped with the tools and knowledge it needs. Let's start executing the build tasks.
+## Practical Example: Cost Estimation
+
+With the **AWS Pricing MCP Server** configured, you can estimate costs before deploying:
+
+```
+"Estimate the monthly cost for running 3 t3.medium EC2 instances
+with 100GB EBS storage each in ap-southeast-2"
+```
+
+Kiro will query current AWS pricing and provide a detailed cost breakdown.
+
+## Further Resources
+
+- **AWS MCP Catalog**: [awslabs.github.io/mcp](https://awslabs.github.io/mcp/)
+- **MCP GitHub**: [github.com/awslabs/mcp](https://github.com/awslabs/mcp)
+- **Community servers**: [promptz.dev](https://www.promptz.dev) hosts additional MCP configurations
+
+With **Steering Docs**, **Agent Hooks**, **Powers**, and **MCP Servers** configured, Kiro is now equipped with the tools and knowledge it needs. Let's start executing the build tasks.

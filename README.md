@@ -6,7 +6,8 @@ A hands-on workshop for building a todo list application using spec-driven devel
 
 ## What you'll learn
 
-- **Spec-driven development** — Generate requirements, design documents, and implementation plans from a single prompt
+- **Spec-driven development** — Generate requirements, design 
+documents, and implementation plans from a single prompt
 - **Vibe coding** — Use Kiro's Vibe mode for prompt refinement before switching to Spec mode
 - **Steering docs** — Guide Kiro with coding standards, accessibility rules, and project conventions
 - **Agent hooks & MCP** — Automate workflows and extend Kiro with MCP servers

@@ -1,0 +1,162 @@
+---
+title: Kiro Powers
+description: Install pre-built bundles of MCP tools, steering files, and hooks with one click.
+---
+
+import { Tabs, TabItem, Aside, Steps } from '@astrojs/starlight/components';
+
+**Kiro Powers** are specialized add-ons that bundle MCP tools, steering files, and hooks into a single install. They give your agents specialized knowledge without overwhelming them with context — Powers activate dynamically based on your conversation, loading only relevant capabilities.
+
+<Aside type="tip">
+Powers are **free for all Kiro users** and require no additional configuration. Install with one click and start using immediately.
+</Aside>
+
+## How Powers Work
+
+1. **One-click install** — Browse the catalog and install any Power instantly
+2. **Context-aware activation** — Powers load automatically when relevant to your task
+3. **Combine multiple Powers** — Use several Powers together for enhanced capabilities
+4. **No context overload** — Only active Power capabilities are loaded into context
+
+## Installing Powers
+
+<Steps>
+
+1. **Open the Powers catalog**
+
+   Access Powers from the Kiro IDE menu or browse at [kiro.dev/powers](https://kiro.dev/powers/).
+
+2. **Choose a Power**
+
+   Browse by category or search for specific capabilities.
+
+3. **Click Install**
+
+   One click installs the Power. It's immediately available in your workspace.
+
+4. **Start using it**
+
+   The Power activates automatically when your conversation relates to its capabilities.
+
+</Steps>
+
+## Available Powers by Category
+
+### Design & Development
+
+| Power | Description |
+|-------|-------------|
+| **Figma** | Maps UI components to designs, maintains design-code consistency |
+| **Postman** | Automates API testing and collection management |
+
+### Deployment & Infrastructure
+
+| Power | Description |
+|-------|-------------|
+| **Netlify** | Deploy modern web apps to global CDN with one command |
+| **Terraform** | Infrastructure-as-Code with HashiCorp registry integration |
+| **AWS CDK** | Build well-architected AWS infrastructure with CDK best practices |
+| **ECS Express Mode** | Deploy containers to AWS with automatic HTTPS endpoints |
+| **InsideOut** | AI-driven AWS and GCP infrastructure design |
+
+### Databases
+
+| Power | Description |
+|-------|-------------|
+| **Aurora PostgreSQL** | Build database applications with AWS best practices |
+| **Aurora DSQL** | Serverless distributed SQL database |
+| **Supabase** | Postgres, authentication, and storage (hosted or local) |
+| **Neon** | Serverless Postgres with branching and autoscaling |
+
+### Agent Building
+
+| Power | Description |
+|-------|-------------|
+| **Strands** | Multi-model agent development (Bedrock, Anthropic, OpenAI) |
+| **Amazon Bedrock AgentCore** | Deploy agents on AWS agentic platform |
+| **SaaS Builder** | Build multi-tenant serverless applications |
+
+### Observability & Monitoring
+
+| Power | Description |
+|-------|-------------|
+| **Datadog** | Query logs, metrics, traces, and manage incidents |
+| **Dynatrace** | DQL queries for debugging and performance analysis |
+| **CloudWatch Application Signals** | SLO compliance and root cause analysis |
+| **Hud** | Runtime code sensors for production error detection |
+
+### Security & Payments
+
+| Power | Description |
+|-------|-------------|
+| **Snyk** | Vulnerability scanning and automated remediation |
+| **Stripe** | Payment integrations and billing management |
+
+## Practical Examples
+
+<Tabs>
+  <TabItem label="Netlify Deployment">
+    With the **Netlify Power** installed, you can deploy directly from chat:
+
+    ```
+    "Deploy this app to Netlify with a custom domain"
+    ```
+
+    Kiro will:
+    - Configure your build settings
+    - Set up the deployment pipeline
+    - Handle DNS and SSL automatically
+  </TabItem>
+  <TabItem label="Supabase Backend">
+    The **Supabase Power** helps you build full-stack apps:
+
+    ```
+    "Add user authentication with Supabase and create a profiles table"
+    ```
+
+    Kiro will:
+    - Set up Supabase authentication
+    - Create database migrations
+    - Generate type-safe client code
+  </TabItem>
+  <TabItem label="Figma to Code">
+    With the **Figma Power**, convert designs to code:
+
+    ```
+    "Implement this Figma design as a React component"
+    ```
+
+    Kiro will:
+    - Extract design tokens (colors, spacing, typography)
+    - Generate component structure matching the design
+    - Maintain consistency with your design system
+  </TabItem>
+</Tabs>
+
+## Powers vs MCP Servers
+
+| Feature | Powers | MCP Servers |
+|---------|--------|-------------|
+| Installation | One-click | Manual configuration |
+| Includes | MCP + Steering + Hooks | MCP tools only |
+| Context management | Automatic activation | Always loaded |
+| Best for | Common workflows | Custom integrations |
+
+<Aside type="note">
+Powers are built on top of MCP servers. If you need more control or want to use servers not available as Powers, configure MCP servers directly (see [MCP Servers](/kiro-workshop-feb26/configuring/mcp-servers/)).
+</Aside>
+
+## Finding More Powers
+
+- **Official catalog**: [kiro.dev/powers](https://kiro.dev/powers/)
+- **Community Powers**: [promptz.dev](https://www.promptz.dev) hosts community-contributed Powers
+- **Build your own**: Powers can be distributed via GitHub repositories
+
+## Workshop Exercise
+
+If you have time, try installing a Power relevant to your work:
+
+1. Visit [kiro.dev/powers](https://kiro.dev/powers/)
+2. Install **Netlify** (for web deployment) or **Supabase** (for database)
+3. In Kiro chat, ask it to help with a task related to that Power
+4. Notice how the Power's capabilities automatically activate

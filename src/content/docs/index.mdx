@@ -18,7 +18,32 @@ hero:
       variant: minimal
 ---
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
+import { Card, CardGrid, Aside } from '@astrojs/starlight/components';
+
+## Choose Your Track
+
+<CardGrid>
+	<Card title="Track 1: Foundations" icon="rocket">
+		**Best for you if:**
+		- You've heard about AI coding but haven't used Kiro yet
+		- You haven't installed or configured Kiro before
+		- You want guided setup and hands-on walkthrough
+
+		**Start here:** [Welcome & Sign In](/kiro-workshop-feb26/getting-started/welcome-and-signin/)
+	</Card>
+	<Card title="Track 2: Builder" icon="setting">
+		**Best for you if:**
+		- You already build software or automation
+		- You're comfortable with git, CLI, and debugging
+		- You want to use Kiro in real workflows
+
+		**Jump to:** [Configuring Kiro](/kiro-workshop-feb26/configuring/task-lists-and-steering/) or [CLI Workflows](/kiro-workshop-feb26/advanced/cli-workflows/)
+	</Card>
+</CardGrid>
+
+<Aside type="tip">
+**Quick decision:** Need help installing and getting started? → **Foundations**. Already building software and want leverage? → **Builder**.
+</Aside>
 
 ## Acknowledgements
 
