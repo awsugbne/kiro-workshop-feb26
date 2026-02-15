@@ -41,3 +41,22 @@ Kiro offers two distinct modes for building applications. Understanding when to 
 <Aside type="tip">
 Using the **Auto** model setting lets Kiro pick the best model for each task, balancing quality and credit usage.
 </Aside>
+
+## Open Weight Models
+
+Kiro now supports **open weight models** in addition to Claude. These models offer different strengths and credit costs:
+
+| Model | Credit Multiplier | Best For |
+|-------|------------------|----------|
+| **DeepSeek v3.2** | 0.25x | Agentic workflows, multi-step tool calling, maintaining state across long sessions |
+| **MiniMax 2.1** | 0.15x | Multilingual programming (Rust, Java, Go, C++, Kotlin, TypeScript), UI generation |
+| **Qwen3 Coder Next** | 0.05x | Long agentic CLI sessions, 256K context support, budget-friendly coding |
+
+<Aside type="note">
+Open weight models are available to both free and paid users. Select them from the model dropdown in the IDE or CLI. Inference runs in AWS US East (N. Virginia) region.
+</Aside>
+
+**When to use open weight models:**
+- **Quick iterations and boilerplate** — Use Qwen3 Coder Next (0.05x) for routine tasks
+- **Complex debugging** — DeepSeek v3.2 excels at maintaining context across debugging sessions
+- **Frontend development** — MiniMax 2.1 is strong at generating web, Android, and iOS UI code

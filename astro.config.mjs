@@ -43,6 +43,7 @@ export default defineConfig({
 						{ label: 'Task Lists & Steering Docs', slug: 'configuring/task-lists-and-steering' },
 						{ label: 'Refining Steering Docs', slug: 'configuring/refining-steering-docs' },
 						{ label: 'Agent Hooks', slug: 'configuring/agent-hooks' },
+						{ label: 'Powers', slug: 'configuring/powers' },
 						{ label: 'MCP Servers', slug: 'configuring/mcp-servers' },
 					],
 				},
@@ -61,11 +62,25 @@ export default defineConfig({
 					],
 				},
 				{
-					label: 'Iteration & Advanced',
+					label: 'Iteration',
 					items: [
 						{ label: 'Checkpointing & Restore', slug: 'iteration/checkpointing' },
 						{ label: 'Iterating with Specs', slug: 'iteration/iterating-with-specs' },
 						{ label: 'Inline Chat', slug: 'iteration/inline-chat' },
+					],
+				},
+				{
+					label: 'Advanced',
+					items: [
+						{ label: 'CLI Workflows', slug: 'advanced/cli-workflows' },
+						{ label: 'Open Weight Models', slug: 'advanced/open-weight-models' },
+						{ label: 'Promptz & Community', slug: 'advanced/promptz-and-community' },
+					],
+				},
+				{
+					label: 'Resources',
+					items: [
+						{ label: 'Further Learning', slug: 'resources' },
 					],
 				},
 			],
